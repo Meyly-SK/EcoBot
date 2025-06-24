@@ -1,43 +1,205 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f0fdf4;
+    body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /* background-image: url('https://www.transparenttextures.com/patterns/symphony.png'); */
+    background: url("img/principal.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #dfe9e5;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    }
+
+    .chat-box {
+    background-color: #f0fdf4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 700px;
+    min-width: 320px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    overflow: hidden;
+    }
+
+    .chat-header {
+    background-color: #128c7e;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    }
+
+    #chat-log {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #e5ddd5;
+    }
+
+    .message-user, .message-bot {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    margin: 8px 0;
+    display: inline-block;
+    clear: both;
+    line-height: 1.4;
+    }
+
+    .message-user {
+    background-color: #dcf8c6;
+    float: right;
+    text-align: left;
+    }
+
+    .message-bot {
+    background-color: #ffffff;
+    float: left;
+    text-align: left;
+    }
+
+    .input-area {
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ccc;
+    }
+
+    #userInput {
+    border-radius: 20px 0 0 20px;
+    }
+
+    #sugerencias {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    #sugerencias li {
+    padding: 10px;
+    cursor: pointer;
+    }
+
+    #sugerencias li:hover,
+    #sugerencias li.active {
+    background-color: #e1f3e1;
+    }
+
+    .input-group.position-relative {
+    position: relative;
+    }
+
+    /* Animación Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.chat-box {
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  max-width: 600px;
-  margin: 30px auto;
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
 }
 
-.message-user {
-  text-align: right;
-  color: #0d6efd;
+/* Animación Slide In para mensajes */
+@keyframes slideInBot {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUser {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .message-bot {
-  text-align: left;
-  color: #198754;
+  animation: slideInBot 0.3s ease-out;
 }
 
-#sugerencias {
-  top: 100%;
-  left: 0;
-  max-height: 200px;
-  overflow-y: auto;
-  border: 1px solid #ced4da;
-  border-top: none;
-  background-color: white;
-  border-radius: 0 0 10px 10px;
+.message-user {
+  animation: slideInUser 0.3s ease-out;
 }
 
-#sugerencias li {
-  padding: 10px;
-  cursor: pointer;
+.eco-card {
+  background-color: #ffffff;
+  border-left: 5px solid #ccc;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 90%;
+  animation: fadeIn 0.3s ease-out;
 }
 
-#sugerencias li:hover {
-  background-color: #e9f5e9;
+.eco-papel       { background-color: #007bff; }  /* Azul */
+.eco-plastico    { background-color: #f4c20d; color: #000; } /* Amarillo */
+.eco-vidrio      { background-color: #28a745; }  /* Verde */
+.eco-organico    { background-color: #8d6e63; }  /* Marrón */
+.eco-peligroso   { background-color: #dc3545; }  /* Rojo */
+
+.eco-card .eco-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.eco-plastico {
+  border-color: #fdd835;
+  background-color: #fffde7;
+}
+
+.eco-papel {
+  border-color: #2196f3;
+  background-color: #e3f2fd;
+}
+
+.eco-vidrio {
+  border-color: #4caf50;
+  background-color: #e8f5e9;
+}
+
+.eco-organico {
+  border-color: #8bc34a;
+  background-color: #f1f8e9;
+}
+
+.eco-noReciclable {
+  border-color: #f44336;
+  background-color: #ffebee;
+}
+
+.tip-img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
 }

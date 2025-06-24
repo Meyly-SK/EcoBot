@@ -1,0 +1,27 @@
+{
+  "papel": {
+    "tacho": "🔵 Tacho AZUL – Papel y cartón",
+    "tip": "El papel debe estar limpio y seco para ser reciclado.",
+    "items": ["hoja", "papel", "cartón", "cuaderno", "revista", "periódico", "caja", "sobre", "folleto", "libro viejo"]
+  },
+  "plastico": {
+    "tacho": "🟡 Tacho AMARILLO – Plásticos y metales",
+    "tip": "Enjuaga bien los envases plásticos antes de reciclar.",
+    "items": ["botella", "envase", "pet", "bolsa", "tapa", "envase de shampoo", "tubo de crema", "envase de yogur", "plato descartable", "vaso plástico"]
+  },
+  "vidrio": {
+    "tacho": "🟢 Tacho VERDE – Vidrios reciclables",
+    "tip": "No mezcles vidrio roto con otros residuos. No incluyen espejos ni cerámica.",
+    "items": ["frasco", "vaso de vidrio", "botella de vidrio", "envase de perfume", "jarra", "tarro de vidrio"]
+  },
+  "organico": {
+    "tacho": "🟤 Tacho MARRÓN – Orgánicos",
+    "tip": "Puedes compostar estos residuos para generar abono natural.",
+    "items": ["cáscara", "resto de comida", "fruta", "pan", "verdura", "hueso pequeño", "café usado", "bolsa de té"]
+  },
+  "peligroso": {
+    "tacho": "🔴 Tacho ROJO – Residuos peligrosos",
+    "tip": "Deposítalos en puntos especiales. Nunca los mezcles con residuos comunes.",
+    "items": ["pila", "batería", "medicamento vencido", "jeringa", "aerosol", "termómetro", "foco", "tinta", "aceite usado"]
+  }
+}
