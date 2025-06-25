@@ -203,3 +203,9 @@
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
+#menuBtn {
+  transition: all 0.3s ease;
+}
+#menuBtn:hover {
+  background-color: #e0f7fa;
+}
